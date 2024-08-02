@@ -1,4 +1,22 @@
 const Navbar = () => {
+  const navList = [
+    {
+      id: 1,
+      title: "Discovery",
+      isSelectable: true,
+    },
+    {
+      id: 2,
+      title: "About",
+      isSelectable: false,
+    },
+    {
+      id: 3,
+      title: "Contact us",
+      isSelectable: false,
+    },
+  ];
+
   return (
     <nav className="py-[20px] font-poppins">
       <div className="container">
@@ -7,27 +25,22 @@ const Navbar = () => {
             <img src="/logo.svg" alt="Logotype" />
           </button>
           <ul className="flex list-none gap-16">
-            <li>
-              <select className="cursor-pointer text-[#272727] text-center text-[16px] font-medium">
-                <option value="discovery">Discovery</option>
-              </select>
-            </li>
-            <li>
-              <button
-                href="#"
-                className="text-[#272727] text-center text-[16px] font-medium"
-              >
-                About
-              </button>
-            </li>
-            <li>
-              <button
-                href="#"
-                className="text-[#272727] text-center text-[16px] font-medium"
-              >
-                Contact us
-              </button>
-            </li>
+            {navList.map((item) => (
+              <li key={item.id}>
+                {item.isSelectable ? (
+                  <select className="cursor-pointer text-[#272727] text-center text-[16px] font-medium">
+                    <option value="discovery">{item.title}</option>
+                  </select>
+                ) : (
+                  <button
+                    href="#"
+                    className={`text-[#272727] text-center text-[16px] font-medium`}
+                  >
+                    {item.title}
+                  </button>
+                )}
+              </li>
+            ))}
           </ul>
           <div className="flex items-center gap-[20px]">
             <button>
