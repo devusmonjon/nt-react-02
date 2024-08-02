@@ -1,4 +1,4 @@
-import { Benefits, Hero, Popular, Products, Testimonials } from "./components";
+import { Hero, Popular, Products } from "./components";
 
 const App = () => {
   const products = [
