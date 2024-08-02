@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Product = ({ title, price, img }) => {
   return (
     <div className="w-[255px] h-[230px] flex items-center flex-col relative shadow-[0px_4px_24px_0px_rgba(123,123,123,0.15)]">
@@ -14,6 +16,12 @@ const Product = ({ title, price, img }) => {
       </div>
     </div>
   );
+};
+
+Product.propTypes = {
+  title: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
 };
 
 export default Product;

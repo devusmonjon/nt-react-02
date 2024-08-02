@@ -1,5 +1,6 @@
 import Product from "../product/product";
 import SectionTitle from "../section-title/section-title";
+import PropTypes from "prop-types";
 
 const Products = ({ data }) => {
   return (
@@ -23,6 +24,10 @@ const Products = ({ data }) => {
       </div>
     </section>
   );
+};
+
+Products.propTypes = {
+  data: PropTypes.array.isRequired,
 };
 
 export default Products;

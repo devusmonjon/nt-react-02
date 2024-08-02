@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const SectionTitle = ({ title, subtitle, className }) => {
   return (
     <div className={`w-full text-center font-poppins ${className}`}>
@@ -9,6 +11,12 @@ const SectionTitle = ({ title, subtitle, className }) => {
       </p>
     </div>
   );
+};
+
+SectionTitle.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
 };
 
 export default SectionTitle;

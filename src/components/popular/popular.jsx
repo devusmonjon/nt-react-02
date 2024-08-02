@@ -1,5 +1,6 @@
 import Product from "../product/product";
 import SectionTitle from "../section-title/section-title";
+import PropTypes from "prop-types";
 
 const Popular = ({ data }) => {
   return (
@@ -23,6 +24,10 @@ const Popular = ({ data }) => {
       </div>
     </section>
   );
+};
+
+Popular.propTypes = {
+  data: PropTypes.array.isRequired,
 };
 
 export default Popular;
